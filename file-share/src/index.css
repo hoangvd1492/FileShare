@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Cause:wght@100..900&display=swap");
+
+@import "tailwindcss";
+
+html {
+  font-family: "Cause", cursive;
+}
+:root {
+  --navbar-height: 64px;
+}
+
+.app-container {
+  padding: 0 64px;
+}
+
+@media screen and (width <=678px) {
+  .app-container {
+    padding: 0 8px;
+  }
+}
+
+.shadow {
+  box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.shadow2 {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn {
+  @apply w-fit px-8 py-2 flex flex-row gap-2 items-center cursor-pointer text-white font-[700]  hover:scale-105;
+}
+
+.btn:disabled {
+  @apply cursor-not-allowed opacity-50 hover:scale-100;
+}
+
+.card {
+  @apply border-4 md:px-8 py-6 px-2;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #6b7280;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.progress {
+  height: 8px;
+  width: 100%;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress .bar {
+  height: 100%;
+  position: absolute;
+  border-radius: 8px;
+  top: 0;
+  @apply bg-green-600;
+}
+
+.progressbar-skeleton {
+  height: 8px;
+  width: 100%;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progressbar-skeleton::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  border-radius: 8px;
+  top: 0;
+  animation: loop 1s infinite linear;
+  @apply bg-green-600;
+}
+
+.fadeIn {
+  animation: fade-in 0.2s ease-out;
+}
+
+@keyframes loop {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
